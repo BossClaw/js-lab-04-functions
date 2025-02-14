@@ -36,13 +36,11 @@ function addNumbers(num1, num2) {
     const parse_float_1 = parseFloat(num1);
     const parse_float_2 = parseFloat(num2);
 
-    if (isNaN(parse_float_1))
-    {
+    if (isNaN(parse_float_1)) {
         return "Value 1 is not a number!";
     }
-    
-    if (isNaN(parse_float_2))
-    {
+
+    if (isNaN(parse_float_2)) {
         return "Value 2 is not a number!";
     }
 
@@ -76,7 +74,7 @@ function log_scope_x() {
     console.log("GLOBAL SCOPE X IS [" + scope_x + "]");
 }
 
-// PART 6
+// PART 4
 function outerFunction() {
     let count = 0;
     return function () {
@@ -86,6 +84,28 @@ function outerFunction() {
 }
 
 const counter = outerFunction();
+
+
+function timeClosure() {
+    let lastTime = Date.now();
+
+    return function () {
+        const currentTime = Date.now();
+        const diff = currentTime - lastTime;
+        lastTime = currentTime;
+
+
+        // MAKE HUMAN FRIENDLY
+        const minutes = Math.floor(diff / 60000);
+        const seconds = Math.floor((diff % 60000) / 1000);
+        const milliseconds = diff % 1000;
+
+        return `${minutes}m ${seconds}s ${milliseconds}ms`;
+    };
+}
+
+
+const check_closure_time = timeClosure();
 
 
 // QUICK ASSIGN
@@ -201,6 +221,11 @@ function do_task(task_id, input_val_1, input_val_2, output_div) {
 
             let updated_closure_value = counter();
             resText = "CLOSURE VALUE IS NOW[" + updated_closure_value + "]";
+            break;
+
+        case 5:
+            // Part 4: Closure bonus            
+            resText = "TIME SINCE CLOSURE CHECK[" + check_closure_time() + "]";
             break;
     }
 

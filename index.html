@@ -94,7 +94,21 @@
                     </button>
                 </div>
 
-                <pre id="task_4_output">Task 4 Results</pre>
+                <pre id="task_4_output">Part 4 Results</pre>
+            </div>
+
+            <div>
+                <h2>Step 5: Closure bonus</h2>
+                <p>This closure func stores the last time it was called and returns the difference in time.</p>
+                <p>Useful for a simple passage of time tracking, without updated counter.</p>
+
+                <div class="h_container">
+                    <button id='task_5_butt' type="button">
+                        Do Part 5
+                    </button>
+                </div>
+
+                <pre id="task_5_output">Part 5 Results</pre>
             </div>
     </div>
 
@@ -108,6 +122,7 @@
         document.getElementById("task_3_butt").addEventListener("click", () => { do_task(3, document.getElementById("task_3_input_1").value, null, document.getElementById("task_3_output")) });
 
         document.getElementById("task_4_butt").addEventListener("click", () => { do_task(4, null, null, document.getElementById("task_4_output")) });
+        document.getElementById("task_5_butt").addEventListener("click", () => { do_task(5, null, null, document.getElementById("task_5_output")) });
 
         window.onload = () => {
             log_scope_x();
