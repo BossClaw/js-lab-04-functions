@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 4: Declaring and Invoking Functions</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="crt.css" />
+
+    <script defer src="script.js"></script>
+</head>
+
+<!-- <body class="crt"> -->
+
+<body>
+    <div class="bodyContent">
+        <header style="text-align: center">
+            <h1>**** CPAN113 WEB - LAB 4 ****</h1>
+            <p aria-label="System RAM info">
+                Declaring and Invoking Functions
+            </p>
+
+        </header>
+
+        <main>
+            <div>
+                <h2>Part 1: Declaring and Invoking Functions</h2>
+                <p>Write a function named greet that takes a single parameter (a person's name) and returns a greeting
+                    message.</p>
+
+                <div class="h_container">
+                    <p>Enter Your Name</p>
+                    <input id="task_1_input" type="string">
+
+                    <button id='task_1_butt' type="button">
+                        Do Part 1
+                    </button>
+                </div>
+
+                <pre id="task_1_output">Part 1 Results...</pre>
+            </div>
+
+
+            <div>
+                <h2>Part 2: Working with Parameters and Returning Values</h2>
+                <p>Create a function named addNumbers that accepts two parameters.</p>
+                <p>It should return the sum of those parameters.</p>
+
+                <div class="h_container">
+                    <p>First Number</p>
+                    <input id="task_2_input_1" class='inp_narrow' type="number">
+
+                    <p>Second Number</p>
+                    <input id="task_2_input_2" class='inp_narrow' type="number">
+
+                    <button id='task_2_butt' type="button">
+                        Do Part 2
+                    </button>
+                </div>
+
+                <pre id="task_2_output">Part 2 Results...</pre>
+            </div>
+
+
+            <div>
+                <h2>Part 3: Function Scope</h2>
+                <p>Declare a variable globally, then declare a function changeValue() that re-declares the same variable
+                    name inside the function and assigns it a different value.</p>
+                <p>Observe the scope behavior by logging the variable in different places.</p>
+
+                <div class="h_container">
+                    <p>Enter a new value for X</p>
+                    <input id="task_3_input_1" class='inp_narrow'>
+
+                    <button id='task_3_butt' type="button">
+                        Do Part 3
+                    </button>
+                </div>
+
+                <pre id="task_3_output">Part 3 Results</pre>
+            </div>
+
+
+            <div>
+                <h2>Step 4: Closures</h2>
+                <p>Write a function outerFunction that declares a local variable and returns an inner function. The
+                    inner function should update the local variable each time it's called.</p>
+
+                <div class="h_container">
+                    <button id='task_4_butt' type="button">
+                        Do Part 4
+                    </button>
+                </div>
+
+                <pre id="task_4_output">Task 4 Results</pre>
+            </div>
+    </div>
+
+    <script>
+        // MANUALLY REG THE LOGIC TO THE BUTTON
+        document.getElementById("task_1_butt").addEventListener("click", () => { do_task(1, document.getElementById("task_1_input").value, null, document.getElementById("task_1_output")) });
+
+        document.getElementById("task_2_butt").addEventListener("click", () => { do_task(2, document.getElementById("task_2_input_1").value, document.getElementById("task_2_input_2").value, document.getElementById("task_2_output")) });
+
+
+        document.getElementById("task_3_butt").addEventListener("click", () => { do_task(3, document.getElementById("task_3_input_1").value, null, document.getElementById("task_3_output")) });
+
+        document.getElementById("task_4_butt").addEventListener("click", () => { do_task(4, null, null, document.getElementById("task_4_output")) });
+
+        window.onload = () => {
+            log_scope_x();
+        };
+    </script>
+</body>
+
+</html>
